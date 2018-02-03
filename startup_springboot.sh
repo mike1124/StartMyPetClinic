@@ -10,16 +10,11 @@ sudo apt-get update -qqy >> /home/ubuntu/Logs/AptGetLog
 sudo apt-get upgrade -qqy >> /home/ubuntu/Logs/AptGetLog
 echo "All up to date now!"
 
-#install Java
-sudo add-apt-repository ppa:webupd8team/java >>/home/ubuntu/Logs/JavaInstall.log
-sudo apt-get update -qqy >> /home/ubuntu/Logs/JavaInstall-log
-java -version
+#install Open JDK Java
+sudo apt-get install -qqy openjdk-8-jdk
 
 #install Maven
-sudo mv mavenenv.sh /etc/profile.d/mavenenv.sh
-sudo chmod +x /etc/profile.d/mavenenv.sh
-sudo /etc/profile.d/mavenenv.sh 
-source /etc/profile.d/mavenenv.sh
+sudo apt-get install -qqy maven
 
 #Verify Maven installation
 mvn --version
