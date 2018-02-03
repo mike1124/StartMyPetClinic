@@ -43,4 +43,4 @@ git clone https://github.com/mike1124/$1.git
 #Create package
 cd $1
 mvn package
-echo "$1 starting..."
+echo "$1 packed..."
