@@ -38,9 +38,9 @@ if [ -d /home/ubuntu/WWW/$1 ]
 	then
 	rm -rf /home/ubuntu/WWW/$1
 fi
-git clone https://github.com/mike1124/$1.git > /home/ubuntu/Logs/CreateBuild.log &
+git clone https://github.com/mike1124/$1.git & >> /home/ubuntu/Logs/CreateBuild.log
 
 #Create package
 cd $1
-mvn package >> /home/ubuntu/Logs/CreateBuild.log &
+mvn package & >> /home/ubuntu/Logs/CreateBuild.log &
 echo "$1 starting..."
