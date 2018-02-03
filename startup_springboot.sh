@@ -23,24 +23,24 @@ echo "Maven Installtion komplett"
 #Download Petclinic resources
 if [ -d /home/ubuntu/WWW ]
         then
-        echo "WWW already exists"
+        rm -rf /home/ubuntu/WWW
         else
         mkdir /home/ubuntu/WWW
 fi
-if [ -d /home/ubuntu/WWW/Logs ]
+if [ -d /home/ubuntu/Logs ]
         then
-        echo "Logs already exists"
+        rm -rf /home/ubuntu/Logs
         else
-        mkdir /home/ubuntu/WWW/Logs 
+        mkdir /home/ubuntu/Logs 
 fi
 cd /home/ubuntu/WWW
 if [ -d /home/ubuntu/WWW/$1 ]
 	then
 	rm -rf /home/ubuntu/WWW/$1
 fi
-git clone https://github.com/mike1124/$1.git
+git clone https://github.com/mike1124/$1.git >> /home/ubuntu/Logs/CreateBuild.log &
 
-#Start Pet-Clinic
+#Create package
 cd $1
-mvn spring-boot:run >> /home/ubuntu/WWW/Logs/$1.log &
+mvn package >> /home/ubuntu/Logs/CreateBuild.log &
 echo "$1 starting..."
