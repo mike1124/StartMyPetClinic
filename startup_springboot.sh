@@ -11,8 +11,8 @@ sudo apt-get upgrade -qqy >> /home/ubuntu/Logs/AptGetLog
 echo "All up to date now!"
 
 #install Java
-#sudo add-apt-repository ppa:webupd8team/java >>/home/ubuntu/Logs/JavaInstall.log
-#sudo apt-get update -qqy >> /home/ubuntu/Logs/JavaInstall-log
+sudo add-apt-repository ppa:webupd8team/java >>/home/ubuntu/Logs/JavaInstall.log
+sudo apt-get update -qqy >> /home/ubuntu/Logs/JavaInstall-log
 java -version
 
 #install Maven
